@@ -18,7 +18,8 @@ $team_color_slogan:#f3f3f3;
 @import "styles/plugins/fancybox/jquery.fancybox-thumbs";
 @import "styles/plugins/fancybox/jquery.fancybox-buttons";
 @import "styles/plugins/slicknav/slicknav";
-
+@import "styles/plugins/animate/animate"; 
+ 
 // styles. Past styles of repititive section (if you have more one pages)
 //in styles/sections/
 //@import "styles/sections/header";
@@ -60,6 +61,7 @@ $team_color_slogan:#f3f3f3;
 	background-blend-mode: multiply, normal;
 	background-size:cover;
 	position:relative;
+    height:100vh; 
 }
 .header_top{
 	display:flex;
@@ -96,12 +98,13 @@ margin-left:11px;
 	}
 }
 .header_slider{
+    height: 80vh;
 }
 .slider_slide{
 	color: #ffffff;
 }
 .slide_title{
-	margin-top:165px;
+	margin-top:20vh;
 	font-family: "Playfair Display";
 	font-size: 32px;
 	font-weight: 900;
@@ -193,21 +196,13 @@ padding:15px;
 	background-blend-mode: multiply, normal;
 	background-size:cover;
 	position:relative;
+    height: 80vh;
 }
-
-.video_player{ 
-	visibility:hidden;
-	display:block;
-	margin:50px auto;
-    background:url(images/video_poster.jpg) no-repeat, $gradient-overlay;
-	background-blend-mode: multiply, normal;
-	background-size:cover;
-	width:50%;
-	height:auto;}
 
 .video_play{
 	position: absolute;
-    top:calc(50% - 50px); left:calc(50% - 50px);
+    top:calc(50% - 50px);
+    left:calc(50% - 50px);
     cursor: pointer;
 }
 .section__expertise{}
@@ -259,6 +254,13 @@ padding:15px;
 }
 .expertise__block_icon{
 	margin:35px 0;
+    animation-play-state:paused;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    &:hover{
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+    }
 }
 .expertise__block_icon_img{
 }
@@ -466,16 +468,24 @@ background:url(images/comments_bg.jpg) no-repeat, $gradient-overlay;
 	margin:45px auto 70px;
 }
 .preview_slide{
- margin:5px;
+    margin:5px;
+    padding: 10px 0;
 }
 .preview_photo{
 	width:45px;
 	height:auto;
 	border-radius:50%;
 	overflow:hidden;
+  
+    
+}
+.preview_slide.slick-center{
+     padding: 0;
 }
 .preview_slide.slick-center .preview_photo{
 	width:70px;
+     margin: 0;
+   
 }
 
 .section__contact{
@@ -648,7 +658,10 @@ margin-top:40px;
 }
 //FOOTER END
 @media(max-width:1024px){
-
+    .header{
+        height: auto;
+    }
+    
 }
 @media (max-width:768px){
 	.header_top_mobile{

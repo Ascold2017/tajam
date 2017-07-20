@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    new WOW().init();
 //put your code here
 $("#sendForm").submit(function(){ // пeрeхвaтывaeм всe при сoбытии oтпрaвки
 		var form = $(this); // зaпишeм фoрму, чтoбы пoтoм нe былo прoблeм с this
@@ -43,6 +44,9 @@ $(".header_slider").slick({
 
 	arrows:false,
 	dots:true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
 });
 
 $(".comments__slider").slick({
@@ -83,27 +87,29 @@ $('.top_menu').slicknav({
 
 });
 
-var controls = {
-        video: $(".video_player"),
-        playpause: $("#playpause")                 
-    };
-                
-    var video = controls.video[0];
-               
-    controls.playpause.click(function(){
-        if (video.paused) {
-            video.play();
-            video.style.visibility="visible";
-            controls.playpause[0].style.display="none";    
-        } else {
 
-            video.pause();
-            video.style.visibility="hidden";
-            controls.playpause[0].style.display="block";   
-
-        }
-                
-        $(this).toggleClass("paused"); 
-    });
+jQuery("a.popupbox-video").fancybox({
+   openEffect  : 'none',
+		closeEffect : 'none',
+        width       : 1280,
+        height      : 720,
+        maxWidth    : '50%',
+        maxHeight   : '50%',  
+        padding     : 0,
+        margin      : 0,           
+		helpers : {
+			media : {
+			    youtube : {
+			         params : {
+			             theme : 'light',
+                         vq    : 'hd720',
+                         css   : {
+                            'body' : 'color: #fff'
+                         } 
+			         }
+			    } 
+			}
+		}
+});
    
 });
