@@ -329,11 +329,16 @@ padding:15px;
 
 }
 .team_block_image{
-     max-width:220px;
-     height:auto; overflow:hidden;
+     width:220px;
+     height: 300px;; overflow:hidden;
      border-bottom: 1px solid $border_team;
+    margin: 0 auto;
 }
-.teams_photo{display:block;}
+.teams_photo{
+    width: auto;
+    height: 100%;
+    display:block;
+}
 .team_block_bottom{
 	
 }
@@ -403,7 +408,10 @@ overflow:hidden;
 }
 
 .ourworks_photo{
-	max-width:100%;
+	
+}
+.ourworks_img{
+    max-width:100%;
 	height:auto;
 	overflow:hidden;
 	display:block;
@@ -632,6 +640,11 @@ margin-top:40px;
 	text-align:center;
 	padding-top:8px;
 	box-sizing:border-box;
+    transition: all 0.5s ease;
+    &:hover{
+        transform: scale(1.2);
+        
+    }
 }
 
 .footer__bottom{
@@ -659,6 +672,9 @@ margin-top:40px;
 //FOOTER END
 @media(max-width:1024px){
     .header{
+        height: auto;
+    }
+    .header_slider{
         height: auto;
     }
     
@@ -699,7 +715,7 @@ margin-top:40px;
     .footer_text,.contacts_title,.socials_title{
     	text-align: center;
     }
-    .contacts_title{
+    .contacts_title, .socials_title{
     	margin-top: 30px;
     }
     .contacts_adress,.contacts_phone{text-align:center;}
@@ -708,6 +724,12 @@ margin-top:40px;
     }
     .social_icons{
     	justify-content: space-around;
+    }
+    .social_submit{
+        width: 20%;
+    }
+    .subscribe_input{
+        width: 80%;
     }
 
 }
