@@ -85,7 +85,7 @@ gulp.task('build', ['removedist', 'sass', 'js'], function() {
 
 	var buildCss = gulp.src([
 		'app/style.min.css',
-		]).pipe(gulp.dest('dist/'));
+		]).pipe(gulp.dest('dist'));
 
 	var buildJs = gulp.src([
 		'app/js/scripts.min.js',
